@@ -6,6 +6,9 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Load command
+ */
 class Load extends Command
 {
     private $logger;
@@ -43,7 +46,7 @@ class Load extends Command
         
         $address = $this->addressFactory->create()
             ->getCollection()
-            ->addFieldToFilter('backoffice_id', array('eq' => 123456))
+            ->addFieldToFilter('backoffice_id', ['eq' => 123456])
             ->getFirstItem();
         
 
